@@ -1,0 +1,247 @@
+<!-- BEGIN: Subheader -->
+<div class="m-subheader" appunwraptag="">
+        <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h3 class="m-subheader__title">
+                        View and  edit your account details
+                </h3>
+            </div>
+            <div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- END: Subheader -->
+    <div class="m-content">
+        <div class="row">
+            <div class="col-xl-3 col-lg-4">
+                <div class="m-portlet m-portlet--full-height">
+                    <div class="m-portlet__body">
+                        <div class="m-card-profile">
+                            <div class="m-card-profile__title m--hide">
+                                Your Profile
+                            </div>
+                            <div class="m-card-profile__pic">
+                               
+                                <div  class="image-upload">
+                                        <label for="file-input">
+                                            <img *ngIf="userImage" height="120px" width="120px" src="./assets/app/media/img/users/user4.png">
+                                           <img  *ngIf="userViewImage"  height="120" width="120" class= "rounded-circle" src={{items.userImage}} />
+                                        </label>
+                                        <input   id="file-input"  type="file" (change)="detectFiles($event)">
+                            
+                                    </div>
+                            </div>
+                            <div class="m-card-profile__details">
+                                <span class="m-card-profile__name">
+                                        {{username}}
+                                </span>
+                                <a href="" class="m-card-profile__email m-link">
+                                        {{userEmail}}
+                                </a>
+                            </div>
+                        </div>
+                        <ul class="m-nav m-nav--hover-bg m-portlet-fit--sides">
+                            <li class="m-nav__separator m-nav__separator--fit"></li>
+                            <li class="m-nav__section m--hide">
+                                <span class="m-nav__section-text">
+                                    Section
+                                </span>
+                            </li>
+                            <li class="m-nav__item">
+                                <a routerLink="/account" class="m-nav__link">
+                                    <i class="m-nav__link-icon flaticon-profile-1"></i>
+                                    <span class="m-nav__link-title">
+                                        <span class="m-nav__link-wrap">
+                                            <span class="m-nav__link-text">
+                                                My Profile
+                                            </span>
+                                            
+                                        </span>
+                                    </span>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        <div class="m-portlet__body-separator"></div>
+                        <div class="m-widget1 m-widget1--paddingless">
+                            <div class="m-widget1__item">
+                                <div class="row m-row--no-padding align-items-center">
+                                   
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-9 col-lg-8">
+                <div class="m-portlet m-portlet--full-height m-portlet--tabs">
+                    <div class="m-portlet__head">
+                        <div class="m-portlet__head-tools">
+                            <ul class="nav nav-tabs m-tabs m-tabs-line   m-tabs-line--left m-tabs-line--primary" role="tablist">
+                                <li class="nav-item m-tabs__item">
+                                    <a class="nav-link m-tabs__link active" data-toggle="tab" href="#m_user_profile_tab_1" role="tab">
+                                        <i class="flaticon-share m--hide"></i>
+                                        Update Profile
+                                    </a>
+                                </li>
+                                <li class="nav-item m-tabs__item">
+                                    <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_user_profile_tab_2" role="tab">
+                                       Change Password
+                                    </a>
+                                </li>
+                                <li class="nav-item m-tabs__item">
+                                    <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_user_profile_tab_3" role="tab">
+                                        Settings
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="m_user_profile_tab_1">
+                            <div class="m-form m-form--fit m-form--label-align-right">
+                                <div class="m-portlet__body">
+                                    <div class="form-group m-form__group m--margin-top-10 m--hide">
+                                        <div class="alert m-alert m-alert--default" role="alert">
+                                            The example form below demonstrates common HTML form elements that receive updated styles from Bootstrap with additional classes.
+                                        </div>
+                                    </div>
+                                    <div class="form-group m-form__group row">
+                                        <div class="col-10 ml-auto">
+                                            <h3 class="m-form__section">
+                                                 Personal Details
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    <div class="form-group m-form__group row">
+                                        <label for="example-text-input" class="col-2 col-form-label">
+                                            Full Name
+                                        </label>
+                                        <div class="col-7">
+                                            <input  [(ngModel)]="model.username" class="form-control m-input" type="text" value=" {{username}}">
+                                        </div>
+                                    </div>
+                                    <div class="form-group m-form__group row">
+                                        <label for="example-text-input"  class="col-2 col-form-label">
+                                            Phone No.
+                                        </label>
+                                        <div class="col-7">
+                                            <input  [(ngModel)]="model.userPhoneNumber" class="form-control m-input" type="text" value=" {{userPhoneNumber}}">
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                                <div class="m-portlet__foot m-portlet__foot--fit">
+                                    <div class="m-form__actions">
+                                        <div class="row">
+                                            <div class="col-2"></div>
+                                            <div class="col-7">
+                                                <button  (click)="saveChange()" type="reset" class="btn btn-accent m-btn m-btn--air m-btn--custom">
+                                                    Save changes
+                                                </button>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane active" id="m_user_profile_tab_2">
+                                <div class="m-form m-form--fit m-form--label-align-right">
+                                        <div class="m-portlet__body">
+                                            <div class="form-group m-form__group m--margin-top-10 m--hide">
+                                                <div class="alert m-alert m-alert--default" role="alert">
+                                                    The example form below demonstrates common HTML form elements that receive updated styles from Bootstrap with additional classes.
+                                                </div>
+                                            </div>
+                                            
+                                           
+                                           
+                                            <div class="form-group m-form__group row">
+                                                <div class="col-10 ml-auto">
+                                                    <h3 class="m-form__section">
+                                                      Change Password
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group row">
+                                                <label for="example-text-input" class="col-2 col-form-label chnge-pass">
+                                                  Email ID
+                                                </label>
+                                                <div class="col-7">
+                                                    
+                                                    <input disabled class="form-control m-input" type="text" value="{{userEmail}}">
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group row">
+                                                <label for="example-text-input" class="col-2 col-form-label chnge-pass">
+                                                   Old Password
+                                                </label>
+                                                <div class="col-7">
+                                                  
+                                                    <input [(ngModel)]="model.oldPass" class="form-control m-input"  type="text" >
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group row">
+                                                <label for="example-text-input"  class="col-2 col-form-label chnge-pass">
+                                                    New Password
+                                                </label>
+                                                <div class="col-7">
+                                                       
+                                                    <input [(ngModel)]="model.newPass" class="form-control m-input" type="text" value="www.twitter.com/Mark.Andre">
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group row">
+                                                <label for="example-text-input" class="col-2 col-form-label chnge-pass">
+                                                    Conform New Password
+                                                </label>
+                                                <div class="col-7">
+                                                       
+                                                    <input [(ngModel)]="model.conNewPass"  class="form-control m-input" type="text" value="www.instagram.com/Mark.Andre">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="m-portlet__foot m-portlet__foot--fit">
+                                            <div class="m-form__actions">
+                                                <div class="row">
+                                                    <div class="col-2">
+
+                                                     </div>
+                                                    <div class="col-7">
+
+                                                        <button type="reset" (click)="changePassword()" class="btn btn-accent m-btn  btnchange">Change</button>
+                                                        <button type="reset" (click)="changePassword()" class="btn btn-accent m-btn m-btn--air m-btn--custom nobtnchange">
+                                                            changes Password
+                                                        </button>
+                                                        &nbsp;&nbsp;
+                                                        <button type="reset" (click)="cancle()" class="btn btn-secondary m-btn m-btn--air m-btn--custom">
+                                                            Cancel
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="tab-pane active" id="m_user_profile_tab_3">
+                                <div class="m-form m-form--fit m-form--label-align-right">
+                                        <div class="m-portlet__body">
+                                           
+                                            </div>
+                                            <div class="form-group m-form__group row">
+                                                    <div class="col-10 ml-auto">
+                                                        <h3 class="m-form__section">
+                                                                <!-- Settings -->
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    

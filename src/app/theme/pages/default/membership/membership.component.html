@@ -1,0 +1,88 @@
+<div class="m-subheader" appunwraptag="">
+        <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h3 class="m-subheader__title">
+                        View your plan details and invoices
+                </h3>
+            </div>
+            <div>
+              
+            </div>
+        </div>
+    </div>
+    <!-- END: Subheader -->
+    <div class="m-content">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="m-portlet m-portlet--full-height">
+                        <div class="m-portlet__body">
+                                <div class="m-portlet__body">
+                                        
+                                            <div id="m_calendar"  style="text-align: cenetr">
+                                               
+                                                    <div  *ngIf="membershiSetting" class="m-widget12 m-widget12--chart-bottom m--margin-top-10" >
+                                                            <div class="m-widget12__item">
+                                                    <span class="text-style">
+                                                            
+                                                             <span>
+                                                               Credit Card Number:
+                                                             </span>
+                                                              
+                                                             <span>
+                                                                {{UserCreditCardNumber}}
+                                                               </span>
+                                                         </span>
+                                                        
+                                                         </div>
+                                                         </div>
+                                            </div>
+                                            <!-- Payment form -->
+                                   <div class="container center_div margin-form" *ngIf="paymentform" >
+                                        <div id="Checkout" class="inline">
+                                        <h1>Payment Details</h1>
+                                        <br/>
+                                        <div class="card-row">
+                                            <span class="visa"></span>
+                                            <span class="mastercard"></span>
+                                            <span class="amex"></span>
+                                            <span class="discover"></span>
+                                        </div>  
+                                      
+                                        <div class="">               
+                                             <div class="form-group">
+                                                 <label >owner Name</label>
+                                                 <input  class="col-md-4" id="NameOnCard" [(ngModel)]="model.NameOfOwner" class="form-control" type="text" maxlength="255"/>
+                                             </div>
+                                             <div class="form-group">
+                                                 <label for="CreditCardNumber">Card number</label>
+                                                 <input id="cc-number" [(ngModel)]="model.CreditCardNumber" type="tel" autocomplete="cc-number" class="form-control" ccNumber>
+                                                 </div>
+                                             <div class="expiry-date-group form-group">
+                                                 <label for="ExpiryDate">Expiry date</label>
+                                                 <input id="cc-exp-date" type="tel"  [(ngModel)]="model.ExpiryDate" autocomplete="cc-exp" class="form-control" ccExp>
+                                                    </div>
+                                             <div class="security-code-group form-group">
+                                                 <label for="SecurityCode">Security code</label>
+                                                 <div class="input-container" >
+                                                        <input id="cc-cvc" type="tel" [(ngModel)]="model.SecurityCode" class="form-control" autocomplete="off" ccCVC>
+                                                         
+                                                 </div>
+                                                
+                                             </div>
+                                             
+                                             <div class="center-button">
+                                             <button (click)="AddPaymentDetails()" id="PayButton"  class="btn    btn-success " type="submit">
+                                                 <span class="submit-button-lock"></span>
+                                                 <span class="align-middle" >Add Payment Details</span>
+                                             </button>
+                                            </div>
+                                        </div>
+                                   
+                                </div>
+                            </div>
+                            </div>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
